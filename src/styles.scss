@@ -1,0 +1,65 @@
+$purple: #ccc;
+	
+h1 {
+    color: $purple;
+}
+
+#wrapper {
+    display: flex;
+    .logo {
+        display: block;
+        text-indent: -9999px;
+        width: 100px;
+        height: 82px;
+        background: url(call.svg);
+        background-size: 100px 82px;
+    }
+    #messenger {
+        flex-direction: column;
+        width: 200px;
+        border: 1px blanchedalmond;
+        background-color: #f3f3f3;
+        padding: 10px;
+        .chat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .chat-title {
+                font-weight: 600;
+            }
+            .chat-close {
+                font-size: 10px;
+                height: 24px;
+                width: 24px;
+            }
+        }
+        .chat-window {
+            min-height: 200px;
+            overflow-y: auto;
+            .chat-container {
+                display: flex;
+                flex-direction: column;
+                padding: 10px 10px 10px 2px;
+            }
+            .chat-item {
+                list-style-type: none;
+                background-color: antiquewhite;
+                border-radius: 0.5;
+                border: 1px;
+                padding: 8px;
+                margin: 4px;
+            }
+        }
+        .message-input {
+            display: flex-inline;
+            font-size: 14px;
+            input {
+                width: 146px;
+            }
+            button {
+                width: 50px;
+           }            
+        }
+    }
+}

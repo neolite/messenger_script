@@ -1,0 +1,31 @@
+<div id="wrapper">
+	{#if visible}
+		<div id="messenger">
+			<span class="chat-header">
+				<span class="chat-title">
+						Messenger
+				</span>
+				<button on:click="set({ visible: false })" class="chat-close">x</button>
+			</span>
+			<div class="chat-window">
+				<ul class="chat-container">
+					{#each messages as msg}
+						<li class="chat-item">
+							{msg}
+						</li>
+					{/each}
+				</ul>				
+			</div>
+			<div class="message-input">
+				<input type="text">
+				<button>
+					Send
+				</button>
+			</div>
+		</div>
+	{:else}
+		<div class="logo">
+		</div>
+	{/if}	
+</div>
+<style src="styles.scss"></style>
