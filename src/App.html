@@ -1,6 +1,6 @@
-<div id="wrapper">
+<div class="messenger-wrapper">
 	{#if visible}
-		<div id="messenger">
+		<div class="messenger">
 			<span class="chat-header">
 				<span class="chat-title">
 						Messenger
@@ -24,8 +24,18 @@
 			</div>
 		</div>
 	{:else}
-		<div class="logo">
+		<div class="logo" on:click="set({ visible: true })">
 		</div>
 	{/if}	
 </div>
 <style src="styles.scss"></style>
+<script>
+export default {
+	data() {
+		return {
+			visible: false,
+			messages: ["Приветствую, могу ли вам помочь?"]
+		}
+  }
+}
+</script>

@@ -1,20 +1,47 @@
-$purple: #ccc;
-	
-h1 {
-    color: $purple;
-}
+$icon-size: 64px;	
 
-#wrapper {
+.messenger-wrapper {
     display: flex;
+    position: absolute;
+    left: auto;
+    bottom: 10px;
+    right: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    input, button, select, textarea {
+        font-family: inherit;
+        font-size: inherit;
+        padding: 0.4em;
+        margin: 0 0 0.5em 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 2px;
+    }
+    input:disabled {
+        color: #ccc;
+    }
+    button {
+        background-color: #f4f4f4;
+        outline: none;
+    }
+    button:focus {
+        border-color: #666;
+    }
     .logo {
         display: block;
         text-indent: -9999px;
-        width: 100px;
-        height: 82px;
+        width: $icon-size;
+        height: $icon-size;
         background: url(call.svg);
-        background-size: 100px 82px;
+        background-size: $icon-size $icon-size;
+        border-radius: 1px;
+        filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.5));
+        animation: pulse 1.5s infinite;   
     }
-    #messenger {
+    .logo:hover {
+        cursor: pointer;
+        animation: none;
+    }
+    .messenger {
         flex-direction: column;
         width: 200px;
         border: 1px blanchedalmond;
@@ -63,3 +90,19 @@ h1 {
         }
     }
 }
+
+@keyframes pulse {
+    0% {
+    //   box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
+      filter: drop-shadow(0 0 0 rgba(0,0,0,0.5));
+    }
+    70% {
+        // box-shadow: 0 0 0 10px rgba(204,169,44, 0);
+        filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.5));
+
+    }
+    100% {
+        // box-shadow: 0 0 0 0 rgba(204,169,44, 0);
+        filter: drop-shadow(0 0 0 rgba(0,0,0,0.5));
+    }
+  }
