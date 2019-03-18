@@ -93,16 +93,13 @@ $icon-size: 64px;
 
 @keyframes pulse {
     0% {
-    //   box-shadow: 0 0 0 0 rgba(204,169,44, 0.4);
       filter: drop-shadow(0 0 0 rgba(0,0,0,0.5));
     }
     70% {
-        // box-shadow: 0 0 0 10px rgba(204,169,44, 0);
         filter: drop-shadow(1px 1px 5px rgba(0,0,0,0.5));
 
     }
     100% {
-        // box-shadow: 0 0 0 0 rgba(204,169,44, 0);
         filter: drop-shadow(0 0 0 rgba(0,0,0,0.5));
     }
   }

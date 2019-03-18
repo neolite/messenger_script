@@ -3,27 +3,26 @@ var MyPlug = {
   element: null,
 
   init: function() {
-    // console.log(this);
-    var div = document.createElement("div");
-    div.setAttribute("id", this.tag_id);
-    // document.body.appendChild(div);
-    // this.initScript();
-    var script = document.createElement("script");
-    script.src = "/src/messenger/index.js";
-    script.type = "text/javascript";
-    document.getElementById(this.tag_id).appendChild(script);
-    // document.getElementsByTagName("head")[0].appendChild(script);
+    var ifrm = document.createElement("iframe");
+    ifrm.setAttribute("id", this.tag_id);
+    ifrm.setAttribute("src", "messenger.html");
+    ifrm.style.width = "400px";
+    ifrm.style.height = "480px";
+    ifrm.style.border = 0;
+    ifrm.style.position = "absolute";
+    ifrm.style.left = "auto";
+    ifrm.style.right = "10px";
+    ifrm.style.bottom = "10px";
+    ifrm.style.display = "none";
+    document.body.appendChild(ifrm);
+    this.element = ifrm;
   },
 
   show: function() {
-    var el = document.getElementById(this.tag_id);
-    el.style.display = "block";
+    this.element.style.display = "block";
   },
 
   hide: function() {
-    var el = document.getElementById(this.tag_id);
-    el.style.display = "block";
+    this.element.style.display = "none";
   }
 };
-
-MyPlug.init();
